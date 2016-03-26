@@ -32,7 +32,7 @@ Goals:
 | Array item range property | `list[2...5].value` | D/L |
 | Every array items, every properties  | `list[]{}` | L |
 | Multiple properties | `{value1, value2}` | D/L |
-| Multiple model properties | `model{value1, value2}` | D/L |
+| Multiple object properties | `model{value1, value2}` | D/L |
 | Multiple array items | `list[3, 6, 8]` | D/L |
 
 
