@@ -14,7 +14,7 @@ Goals:
 | String property | `'value-1'` | D/L |
 | Symbol property | `Symbol(name)` | D/L |
 | Every properties | `{}` | L |
-| Multiple properties  | `{value, 'value-1', Symbol(name)` | D/L |
+| Multiple properties  | `{value, 'value-1', Symbol(name)}` | D/L |
 | Object property | `model.value` | D/L |
 | Object string property | `model.'value-1'` | D/L |
 | Object symbol property | `model.Symbol(name)` | D/L |
