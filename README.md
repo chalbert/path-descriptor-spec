@@ -55,7 +55,7 @@ Goals:
 | model.list[0] = {} | `model.list[0]` |
 | model.list[0].value = 'change' | `model.list[0].value` |
 | model.list[0]['value-1'] = 'change' | `model.list[0].'value-1` |
-| model.list[0][Symbol('sym')] = 'change' | `model.list[0].Symbol(test) |
+| model.list[0][Symbol('sym')] = 'change' | `model.list[0].Symbol(test`) |
 
 ### Multiple changes dispatched
 
