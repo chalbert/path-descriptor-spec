@@ -9,7 +9,7 @@ Goals:
 - Represent multiple changes
 
 | Type | Descriptor | (D)ispached / L(istened) |
-| --- | --- |
+| --- | --- | --- |
 | Property | `value` | D/L |
 | String property | `'value-1'` | D/L |
 | Symbol property | `Symbol(name)` | D/L |
