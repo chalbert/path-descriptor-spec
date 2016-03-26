@@ -2,7 +2,18 @@
 
 Spec that defines how to represent the path of a change on a JavaScript object tree.
 
-## Change triggered
+| Type | Descriptor |
+| --- | --- |
+| Property | `value` |
+| String property | `'value-1'` |
+| Symbol property | `Symbol(name)` |
+| Multiple properties  | `{value, 'value-1', Symbol(name)` |
+| Object property | `model.value`
+| Object string property | `model.'value-1'`
+
+## Examples
+
+### Change triggered
 
 | Change | Descriptor |
 | --- | --- |
@@ -21,7 +32,7 @@ Spec that defines how to represent the path of a change on a JavaScript object t
 | model.list[0]['value-1'] = 'change' | `model.list[0].'value-1` |
 | model.list[0][Symbol('sym')] = 'change' | `model.list[0].Symbol(test) |
 
-## Multiple changes triggered
+### Multiple changes triggered
 
 | Change | Descriptor |
 | --- | --- |
@@ -29,8 +40,10 @@ Spec that defines how to represent the path of a change on a JavaScript object t
 | value1 = 'change1', ['value-2'] = 'change2' | `{value1, 'value-2'}` |
 | value1 = 'change1', [Symbol('sym')] = 'change2' | `{value1, Symbol(sym)}` |
 | model.value1 = 'change1', model.value2 = 'change2' | `model{value1, value2}` |
+| model.list[0] = 'change1', model.list[3] = 'change2'  | `model.list[0,3]` |
+| value = 'change1', model.list[3] = 'change2'  | `{value, model.list[3]}` |
 
-## Change listened
+### Change listened
 
 | Descriptor | Changes |
 | --- | --- |
