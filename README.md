@@ -23,13 +23,14 @@ Spec that defines how to represent the path of a change on a JavaScript object t
 
 ## Multiple changes triggered
 
-## Change listened
 | Change | Descriptor |
 | --- | --- |
 | value1 = 'change1', value2 = 'change2' | `{value1, value2}` |
 | value1 = 'change1', ['value-2'] = 'change2' | `{value1, 'value-2'}` |
 | value1 = 'change1', [Symbol('sym')] = 'change2' | `{value1, Symbol(sym)}` |
 | model.value1 = 'change1', model.value2 = 'change2' | `model{value1, value2}` |
+
+## Change listened
 
 | Descriptor | Changes |
 | --- | --- |
