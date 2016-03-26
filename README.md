@@ -2,18 +2,43 @@
 
 Spec that defines how to represent the path of a change on a JavaScript object tree.
 
-| Type | Descriptor |
+Goals:
+
+- Zero ambiguity
+- Represent every change possible
+- Represent multiple changes
+
+| Type | Descriptor | (D)ispached / L(istened) |
 | --- | --- |
-| Property | `value` |
-| String property | `'value-1'` |
-| Symbol property | `Symbol(name)` |
-| Multiple properties  | `{value, 'value-1', Symbol(name)` |
-| Object property | `model.value`
-| Object string property | `model.'value-1'`
+| Property | `value` | D/L |
+| String property | `'value-1'` | D/L |
+| Symbol property | `Symbol(name)` | D/L |
+| Every properties | `{}` | L |
+| Multiple properties  | `{value, 'value-1', Symbol(name)` | D/L |
+| Object property | `model.value` | D/L |
+| Object string property | `model.'value-1'` | D/L |
+| Object symbol property | `model.Symbol(name)` | D/L |
+| Every object properties | `model{}` | L | 
+| Array item change | `list[2]` | D/L |
+| Array item range | `list[2...5]` | D/L |
+| Array item range, open start | `list[...2]` | D/L |
+| Array item range, open end | `list[2...]` | D/L |
+| Array item negative offset | `list[-1]` | D/L |
+| Every array items | `list[]` | L |
+| Every array items property | `list[].value` | D/L |
+| Every array items string property | `list[].'value-1'` | D/L |
+| Every array items symbol property | `list[].Symbol(name)` | D/L |
+| Array item property | `list[2].value` | D/L |
+| Array item range property | `list[2...5].value` | D/L |
+| Every array items, every properties  | `list[]{}` | L |
+| Multiple properties | `{value1, value2}` | D/L |
+| Multiple model properties | `model{value1, value2}` | D/L |
+| Multiple array items | `list[3, 6, 8]` | D/L |
+
 
 ## Examples
 
-### Change triggered
+### Change dispatched
 
 | Change | Descriptor |
 | --- | --- |
@@ -32,7 +57,7 @@ Spec that defines how to represent the path of a change on a JavaScript object t
 | model.list[0]['value-1'] = 'change' | `model.list[0].'value-1` |
 | model.list[0][Symbol('sym')] = 'change' | `model.list[0].Symbol(test) |
 
-### Multiple changes triggered
+### Multiple changes dispatched
 
 | Change | Descriptor |
 | --- | --- |
