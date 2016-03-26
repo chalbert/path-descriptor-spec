@@ -22,14 +22,14 @@ Spec that defines how to represent the path of a change on a JavaScript object t
 | model.list[0][Symbol('sym')] = 'change' | `model.list[0].Symbol(test) |
 
 ## Multiple changes triggered
-| value1 = 'change1', value2 = 'change2' | `{value1, value2}` |
-| value1 = 'change1', ['value-2'] = 'change2' | `{value1, 'value-2'}` |
-| value1 = 'change1', [Symbol('sym')] = 'change2' | `{value1, Symbol(sym)}` |
-| model.value1 = 'change1', model.value2 = 'change2' | `model{value1, value2}` |
 
 ## Change listened
 | Change | Descriptor |
 | --- | --- |
+| value1 = 'change1', value2 = 'change2' | `{value1, value2}` |
+| value1 = 'change1', ['value-2'] = 'change2' | `{value1, 'value-2'}` |
+| value1 = 'change1', [Symbol('sym')] = 'change2' | `{value1, Symbol(sym)}` |
+| model.value1 = 'change1', model.value2 = 'change2' | `model{value1, value2}` |
 
 | Descriptor | Changes |
 | --- | --- |
