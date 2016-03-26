@@ -51,7 +51,7 @@ Goals:
 | model.list = ['change'] | `model.list` |
 | model.list.push('change2') | `model.list[1]` |
 | model.list.splice(2, 1) | `model.list[2...]` |
-| model.list.splice(1, 2, 'change3', 'change3') | `model.list[1-2]` |
+| model.list.splice(1, 2, 'change3', 'change3') | `model.list[1...2]` |
 | model.list[0] = {} | `model.list[0]` |
 | model.list[0].value = 'change' | `model.list[0].value` |
 | model.list[0]['value-1'] = 'change' | `model.list[0].'value-1` |
